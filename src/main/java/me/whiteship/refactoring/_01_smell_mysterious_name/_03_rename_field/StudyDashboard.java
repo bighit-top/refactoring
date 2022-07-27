@@ -12,9 +12,6 @@ import java.util.Set;
 
 public class StudyDashboard {
 
-//    private Set<String> reviewers = new HashSet<>();
-//    private Set<String> reviews = new HashSet<>();
-
     private Set<StudyReview> studyReviews = new HashSet<>();
 
     /**
@@ -28,18 +25,9 @@ public class StudyDashboard {
 
         List<GHIssueComment> reviews = issue.getComments();
         for (GHIssueComment review : reviews) {
-//            reviewers.add(review.getUserName());
-//            this.reviews.add(review.getBody());
             studyReviews.add(new StudyReview(review.getUserName(), review.getBody()));
         }
     }
-
-//    public Set<String> getReviewers() {
-//        return reviewers;
-//    }
-//    public Set<String> getReviews() {
-//        return reviews;
-//    }
 
     public Set<StudyReview> getStudyReviews() {
         return studyReviews;
@@ -48,8 +36,6 @@ public class StudyDashboard {
     public static void main(String[] args) throws IOException {
         StudyDashboard studyDashboard = new StudyDashboard();
         studyDashboard.loadReviews();
-//        studyDashboard.getReviewers().forEach(System.out::println);
-//        studyDashboard.getReviews().forEach(System.out::println);
         studyDashboard.getStudyReviews().forEach(System.out::println);
     }
 }
