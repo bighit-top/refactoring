@@ -16,7 +16,6 @@ public class StudyPrinter {
         this.participants = participants;
     }
 
-    //    public void execute(List<Participant> participants) throws IOException {
     public void execute() throws IOException {
         try (FileWriter fileWriter = new FileWriter("participants.md");
              PrintWriter writer = new PrintWriter(fileWriter)) {

@@ -72,15 +72,6 @@ public class StudyDashboard {
             writer.print(header(totalNumberOfEvents, participants.size()));
 
             participants.forEach(p -> {
-//                long count = p.homework().values().stream()
-//                        .filter(v -> v == true)
-//                        .count();
-//                double rate = count * 100 / totalNumberOfEvents;
-
-//                double rate = getRate(totalNumberOfEvents, p);
-
-//                String markdownForHomework = String.format("| %s %s | %.2f%% |\n", p.username(), checkMark(p, totalNumberOfEvents), rate);
-//                String markdownForHomework = getMarkdownForParticipant(totalNumberOfEvents, p, rate);
                 String markdownForHomework = getMarkdownForParticipant(totalNumberOfEvents, p);
                 writer.print(markdownForHomework);
             });
@@ -96,7 +87,6 @@ public class StudyDashboard {
     }
 
     private String getMarkdownForParticipant(int totalNumberOfEvents, Participant p) {
-//        String markdownForHomework = String.format("| %s %s | %.2f%% |\n", p.username(), checkMark(p, totalNumberOfEvents), rate);
         String markdownForHomework = String.format("| %s %s | %.2f%% |\n", p.username(), checkMark(p, totalNumberOfEvents), getRate(totalNumberOfEvents, p));
         return markdownForHomework;
     }

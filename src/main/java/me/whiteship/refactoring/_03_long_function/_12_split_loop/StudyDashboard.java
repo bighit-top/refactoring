@@ -32,43 +32,6 @@ public class StudyDashboard {
     }
 
     private void print() throws IOException, InterruptedException {
-//        GHRepository ghRepository = getGhRepository();
-//        ExecutorService service = Executors.newFixedThreadPool(8);
-//        CountDownLatch latch = new CountDownLatch(totalNumberOfEvents);
-
-//        for (int index = 1 ; index <= totalNumberOfEvents ; index++) {
-//            int eventId = index;
-//            service.execute(new Runnable() {
-//                @Override
-//                public void run() {
-//                    try {
-//                        GHIssue issue = ghRepository.getIssue(eventId);
-//                        List<GHIssueComment> comments = issue.getComments();
-////                        Date firstCreatedAt = null;
-////                        Participant first = null;
-//
-////                        for (GHIssueComment comment : comments) {
-////                            Participant participant = findParticipant(comment.getUserName(), participants);
-////                            participant.setHomeworkDone(eventId);
-////
-////                            if (firstCreatedAt == null || comment.getCreatedAt().before(firstCreatedAt)) {
-////                                firstCreatedAt = comment.getCreatedAt();
-////                                first = participant;
-////                            }
-////                        }
-//
-//                        checkHomework(comments, eventId);
-//                        firstParticipantsForEachEvent[eventId - 1] = findFirst(comments);
-//                        latch.countDown();
-//                    } catch (IOException e) {
-//                        throw new IllegalArgumentException(e);
-//                    }
-//                }
-//            });
-//        }
-//        latch.await();
-//        service.shutdown();
-
         checkGithubIssues(getGhRepository());
         new StudyPrinter(this.totalNumberOfEvents, this.participants).execute();
         printFirstParticipants();
