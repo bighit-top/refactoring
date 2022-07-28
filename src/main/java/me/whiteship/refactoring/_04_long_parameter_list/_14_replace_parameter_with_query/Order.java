@@ -13,10 +13,6 @@ public class Order {
 
     public double finalPrice() {
         double basePrice = this.quantity * this.itemPrice;
-//        int discountLevel = this.quantity > 100 ? 2 : 1;
-//        return this.discountedPrice(basePrice, discountLevel);
-
-//        int discountLevel = discountLevel();
         return this.discountedPrice(basePrice);
     }
 
@@ -24,9 +20,6 @@ public class Order {
         return this.quantity > 100 ? 2 : 1;
     }
 
-//    private double discountedPrice(double basePrice, int discountLevel) {
-//        return discountLevel == 2 ? basePrice * 0.90 : basePrice * 0.95;
-//    }
     private double discountedPrice(double basePrice) {
         return discountLevel() == 2 ? basePrice * 0.90 : basePrice * 0.95;
     }

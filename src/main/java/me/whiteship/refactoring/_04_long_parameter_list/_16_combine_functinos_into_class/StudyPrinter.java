@@ -18,13 +18,11 @@ public class StudyPrinter {
         this.participants = participants;
     }
 
-//    private void print() throws IOException {
     public void print() throws IOException {
         try (FileWriter fileWriter = new FileWriter("participants.md");
              PrintWriter writer = new PrintWriter(fileWriter)) {
             this.participants.sort(Comparator.comparing(Participant::username));
 
-//            writer.print(header(this.participants.size()));
             writer.print(header());
 
             this.participants.forEach(p -> {
@@ -64,9 +62,7 @@ public class StudyPrinter {
      * | 참여자 (420) | 1주차 | 2주차 | 3주차 | 참석율 |
      * | --- | --- | --- | --- | --- |
      */
-//    private String header(int totalNumberOfParticipants) {
     private String header() {
-//        StringBuilder header = new StringBuilder(String.format("| 참여자 (%d) |", totalNumberOfParticipants));
         StringBuilder header = new StringBuilder(String.format("| 참여자 (%d) |", this.participants.size()));
 
         for (int index = 1; index <= this.totalNumberOfEvents; index++) {
