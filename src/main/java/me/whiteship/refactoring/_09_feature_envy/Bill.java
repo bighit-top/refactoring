@@ -7,9 +7,6 @@ public class Bill {
     private GasUsage gasUsage;
 
     public double calculateBill() {
-//        var electicityBill = electricityUsage.getAmount() * electricityUsage.getPricePerUnit();
-//        double gasBill = gasUsage.getAmount() * gasUsage.getPricePerUnit();
-//        return electicityBill + gasBill;
         return electricityUsage.getElectricityBill() + gasUsage.getGasBill(this);
     }
 
