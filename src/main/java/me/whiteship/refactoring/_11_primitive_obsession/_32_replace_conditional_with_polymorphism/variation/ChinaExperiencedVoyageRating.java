@@ -17,8 +17,6 @@ public class ChinaExperiencedVoyageRating extends VoyageRating {
     protected int voyageLengthFactor() {
         int result = 0;
         result += 3;
-//        if (this.history.size() > 10) result += 1;
-//        result += historyLengthFactor();
         if (this.voyage.length() > 12) result += 1;
         if (this.voyage.length() > 18) result -= 1;
         return result;

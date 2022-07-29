@@ -4,14 +4,9 @@ public class Employee {
 
     private String name;
 
-//    private String type;
-//    private String typeValue;
-
     private EmployeeType type; //새로운 타입 추
 
     public Employee(String name, String typeValue) {
-//        this.validate(typeValue);
-//        this.typeValue = typeValue;
         this.name = name;
         this.type = this.employeeType(typeValue);
     }
@@ -26,15 +21,7 @@ public class Employee {
         };
     }
 
-//    private void validate(String type) {
-//        List<String> legalTypes = List.of("engineer", "manager", "salesman");
-//        if (!legalTypes.contains(type)) {
-//            throw new IllegalArgumentException(type);
-//        }
-//    }
-
     public String capitalizedType() {
-//        return this.typeValue.substring(0, 1).toUpperCase() + this.typeValue.substring(1).toLowerCase();
         return this.type.capitalizedType();
     }
 
@@ -42,7 +29,6 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
-//                ", type='" + typeValue + '\'' +
                 ", type='" + type.toString() + '\'' +
                 '}';
     }
