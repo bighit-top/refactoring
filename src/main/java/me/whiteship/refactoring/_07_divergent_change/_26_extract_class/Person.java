@@ -2,29 +2,6 @@ package me.whiteship.refactoring._07_divergent_change._26_extract_class;
 
 public class Person {
 
-//    private String officeAreaCode;
-//    private String officeNumber;
-//
-//    public String telephoneNumber() {
-//        return this.officeAreaCode + " " + this.officeNumber;
-//    }
-//
-//    public String officeAreaCode() {
-//        return officeAreaCode;
-//    }
-//
-//    public void setOfficeAreaCode(String officeAreaCode) {
-//        this.officeAreaCode = officeAreaCode;
-//    }
-//
-//    public String officeNumber() {
-//        return officeNumber;
-//    }
-//
-//    public void setOfficeNumber(String officeNumber) {
-//        this.officeNumber = officeNumber;
-//    }
-
     private final TelephoneNumber telephoneNumber;
     private String name;
 
