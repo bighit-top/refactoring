@@ -4,17 +4,7 @@ public class Office {
 
     private String location;
 
-//    private String officeAreCode;
-//
-//    private String officeNumber;
-
     private TelephoneNumber officePhoneNumber;
-
-//    public Office(String location, String officeAreCode, String officeNumber) {
-//        this.location = location;
-//        this.officeAreCode = officeAreCode;
-//        this.officeNumber = officeNumber;
-//    }
 
     public Office(String location, TelephoneNumber officePhoneNumber) {
         this.location = location;
@@ -22,7 +12,6 @@ public class Office {
     }
 
     public String officePhoneNumber() {
-//        return officeAreCode + "-" + officeNumber;
         return this.officePhoneNumber.toString();
     }
 
