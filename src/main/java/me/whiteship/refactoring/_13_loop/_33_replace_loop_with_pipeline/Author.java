@@ -15,22 +15,11 @@ public class Author {
     }
 
     static public List<String> TwitterHandles(List<Author> authors, String company) {
-//        var result = new ArrayList<String> ();
-//        for (Author a : authors) {
-//            if (a.company.equals(company)) {
-//                var handle = a.twitterHandle;
-//                if (handle != null)
-//                    result.add(handle);
-//            }
-//        }
-//        return result;
-
         return authors.stream() //for (Author a : authors) {
                 .filter(author -> author.company.equals(company)) //if (a.company.equals(company)) {
                 .map(author -> author.twitterHandle) //var handle = a.twitterHandle;
                 .filter(t -> t != null) //if (handle != null)
                 .collect(Collectors.toList());//result.add(handle); }}
-
     }
 
 }
