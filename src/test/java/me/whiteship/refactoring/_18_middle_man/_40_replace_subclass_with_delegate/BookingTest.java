@@ -11,25 +11,16 @@ class BookingTest {
 
     @Test
     void talkback() {
-//        Show lionKing = new Show(List.of(), 120);
-//        Show aladin = new Show(List.of("talkback"), 120);
-//        LocalDateTime weekday = LocalDateTime.of(2022, 1, 20, 19, 0);
-//        LocalDateTime weekend = LocalDateTime.of(2022, 1, 15, 19, 0);
         Show noTalkbackShow = new Show(List.of(), 120);
         Show talkbackShow = new Show(List.of("talkback"), 120);
         LocalDateTime nonPeakday = LocalDateTime.of(2022, 1, 20, 19, 0);
         LocalDateTime peakday = LocalDateTime.of(2022, 1, 15, 19, 0);
 
-//        assertFalse(new Booking(noTalkbackShow, nonPeekday).hasTalkback());
-//        assertTrue(new Booking(talkbackShow, nonPeekday).hasTalkback());
-//        assertFalse(new Booking(talkbackShow, peekday).hasTalkback());
         assertFalse(Booking.createBooking(noTalkbackShow, nonPeakday).hasTalkback());
         assertTrue(Booking.createBooking(talkbackShow, nonPeakday).hasTalkback());
         assertFalse(Booking.createBooking(talkbackShow, peakday).hasTalkback());
 
         PremiumExtra premiumExtra = new PremiumExtra(List.of(), 50);
-//        assertTrue(new PremiumBooking(talkbackShow, peekday, premiumExtra).hasTalkback());
-//        assertFalse(new PremiumBooking(noTalkbackShow, peekday, premiumExtra).hasTalkback());
         assertTrue(Booking.createPremiumBooking(talkbackShow, peakday, premiumExtra).hasTalkback());
         assertFalse(Booking.createPremiumBooking(noTalkbackShow, peakday, premiumExtra).hasTalkback());
     }
@@ -39,11 +30,9 @@ class BookingTest {
         Show lionKing = new Show(List.of(), 120);
         LocalDateTime weekday = LocalDateTime.of(2022, 1, 20, 19, 0);
 
-//        Booking booking = new Booking(lionKing, weekday);
         Booking booking = Booking.createBooking(lionKing, weekday);
         assertEquals(120, booking.basePrice());
 
-//        Booking premium = new PremiumBooking(lionKing, weekday, new PremiumExtra(List.of(), 50));
         Booking premium = Booking.createPremiumBooking(lionKing, weekday, new PremiumExtra(List.of(), 50));
         assertEquals(170, premium.basePrice());
     }
@@ -53,11 +42,9 @@ class BookingTest {
         Show lionKing = new Show(List.of(), 120);
         LocalDateTime weekend = LocalDateTime.of(2022, 1, 15, 19, 0);
 
-//        Booking booking = new Booking(lionKing, weekend);
         Booking booking = Booking.createBooking(lionKing, weekend);
         assertEquals(138, booking.basePrice());
 
-//        Booking premium = new PremiumBooking(lionKing, weekend, new PremiumExtra(List.of(), 50));
         Booking premium = Booking.createPremiumBooking(lionKing, weekend, new PremiumExtra(List.of(), 50));
         assertEquals(188, premium.basePrice());
     }
@@ -69,8 +56,6 @@ class BookingTest {
         LocalDateTime weekend = LocalDateTime.of(2022, 1, 15, 19, 0);
         PremiumExtra premiumExtra = new PremiumExtra(List.of("dinner"), 50);
 
-//        assertTrue(new PremiumBooking(lionKing, weekday, premiumExtra).hasDinner());
-//        assertFalse(new PremiumBooking(lionKing, weekend, premiumExtra).hasDinner());
         assertTrue(Booking.createPremiumBooking(lionKing, weekday, premiumExtra).hasDinner());
         assertFalse(Booking.createPremiumBooking(lionKing, weekend, premiumExtra).hasDinner());
         assertFalse(Booking.createBooking(lionKing, weekend).hasDinner());
