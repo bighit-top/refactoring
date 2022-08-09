@@ -11,17 +11,17 @@ public class PremiumBooking extends Booking {
         this.extra = extra;
     }
 
-    @Override
-    public boolean hasTalkback() {
-        return this.show.hasOwnProperty("talkback");
-    }
+//    @Override
+//    public boolean hasTalkback() {
+//        return this.show.hasOwnProperty("talkback");
+//    }
 
-    @Override
-    public double basePrice() {
-        return Math.round(super.basePrice() + this.extra.getPremiumFee());
-    }
+//    @Override
+//    public double basePrice() {
+//        return Math.round(super.basePrice() + this.extra.getPremiumFee());
+//    }
 
-    public boolean hasDinner() {
-        return this.extra.hasOwnProperty("dinner") && !this.isPeakDay();
-    }
+//    public boolean hasDinner() {
+//        return this.extra.hasOwnProperty("dinner") && !this.isPeakDay();
+//    }
 }
