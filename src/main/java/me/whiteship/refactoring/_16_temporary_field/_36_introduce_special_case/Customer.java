@@ -39,7 +39,6 @@ public class Customer {
     }
 
     public boolean isUnknown() {
-//        return getName().equals("unknown");
         return false;
     }
 }
