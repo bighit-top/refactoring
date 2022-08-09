@@ -15,5 +15,4 @@ public class UnknownCustomer extends Customer {
         return "occupant";
     }
 
-
 }
