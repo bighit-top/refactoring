@@ -13,6 +13,13 @@ public class Customer {
     }
 
     public void setDiscountRate(Double discountRate) {
+        //간단한 assert 코드
+//        assert discountRate != null && discountRate >  0;
+
+        //테스트 검증 가능한 코드
+        if (discountRate != null && discountRate > 0) {
+            throw new IllegalArgumentException(discountRate + " can't be minus.");
+        }
         this.discountRate = discountRate;
     }
 }
